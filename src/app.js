@@ -12,10 +12,22 @@
 var a=0;
 const express = require("express");
 const app=express();
-// app.use("/",(req,res)=>
-// {
-//     res.send("Hello Backslash");
-// });
+app.get("/user",(req,res)=>
+{
+    res.send("Hello User");
+});
+app.post("/user",(req,res)=>
+{
+    res.send("Data successfully saved");
+});
+app.delete("/user",(req,res)=>
+{
+    res.send("Data successfully deleted from database");
+});
+app.use("/",(req,res)=>
+{
+    res.send("Hello Backslash");
+});
 app.use("/test",(req,res)=>
 {
     res.send("Hello Test");
